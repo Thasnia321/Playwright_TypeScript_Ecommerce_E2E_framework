@@ -1,15 +1,16 @@
 import { test, expect } from '@playwright/test'
 import { LoginPageDataD } from '../pages/LoginPageDataD'
-import { LoginData, readExcel } from '../utils/excelReader'
+import { readData } from '../utils/unified_dataReader'
 
-
-const testData: LoginData[] = readExcel('./test-data/LoginData.xlsx', 'Sheet');
+//const testData = readData('./test-data/LoginData.csv');
+const testData = readData('./test-data/LoginData.xlsx', 'Sheet');
+//const testData = readData('./test-data/loginDataNew.json')
+console.log('Loaded test data:', testData);
 
 test.describe('Login PAge tests', () => {
-   // for (const data of testData as any[]) { 
-   //removed any[] from the above code as the type is already mentioned later using LoginData[]
+  
    for (const data of testData) { 
-      //  if (data.run !== 'yes') continue - commented as test.skip was introduced
+
 
         test(`Login test case - ${data.username}`, async ({ page }) => {
 
@@ -34,5 +35,4 @@ test.describe('Login PAge tests', () => {
         })
         })
     }
-
-})
+    })
