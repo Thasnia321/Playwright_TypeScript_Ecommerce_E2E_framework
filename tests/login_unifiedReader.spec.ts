@@ -3,8 +3,8 @@ import { LoginPageDataD } from '../pages/LoginPageDataD'
 import { readData } from '../utils/unified_dataReader'
 
 //const testData = readData('./test-data/LoginData.csv');
-const testData = readData('./test-data/LoginData.xlsx', 'Sheet');
-//const testData = readData('./test-data/loginDataNew.json')
+//const testData = readData('./test-data/LoginData.xlsx', 'Sheet');
+const testData = readData('./test-data/loginDataNew.json')
 console.log('Loaded test data:', testData);
 
 test.describe('Login PAge tests', () => {
