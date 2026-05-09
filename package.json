@@ -2,7 +2,7 @@
   "name": "playwrighttypescriptproj2",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {"test": "playwright test"},
   "keywords": [],
   "author": "",
   "license": "ISC",

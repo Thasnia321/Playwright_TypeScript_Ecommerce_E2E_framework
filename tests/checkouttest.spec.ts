@@ -48,16 +48,17 @@ test.describe('Checkout Page Tests', () => {
 
     })
     test('Verify cancelling the order', async ({ checkoutPage, page }) => {
-        await checkoutPage.cancelOrder();
+        await checkoutPage.fillCheckoutInfo('Thasni', 'Althayil', '234345');
+        await checkoutPage.clickCancel();
         await expect(page).toHaveURL('https://www.saucedemo.com/inventory.html')
     })
-    test.only('Verify the items in summary page', async ({ checkoutPage })=>{
+    test('Verify the items in summary page', async ({ checkoutPage })=>{
         await checkoutPage.fillCheckoutInfo('Thasni', 'Althayil', '234345')
         const name = await checkoutPage.getSummaryItems();
         const expectedItem = ['Sauce Labs Backpack'];
         expect(name).toEqual(expectedItem);
     })
-    test.only('Verify the total price', async ({ checkoutPage })=>{
+    test('Verify the total price', async ({ checkoutPage })=>{
         await checkoutPage.fillCheckoutInfo('Thasni', 'Althayil', '234345')
         const price = await checkoutPage.getTotalPrice()
         expect(price).toContain('$32.39')

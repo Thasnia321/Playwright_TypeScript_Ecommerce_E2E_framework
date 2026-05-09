@@ -14,7 +14,7 @@ export class CheckoutPage {
     readonly summaryItems: Locator;
     readonly totalPrice: Locator;
     readonly finishButton: Locator;
-    readonly cancelButton2: Locator;
+   
 
 
     constructor(page: Page) {
@@ -32,7 +32,7 @@ export class CheckoutPage {
         this.summaryItems =page.locator('[data-test="inventory-item-name"]');
         this.totalPrice = page.locator('[data-test="total-label"]');
         this.finishButton = page.locator('[data-test="finish"]');
-        this.cancelButton2 = page.locator('[data-test="cancel"]')
+       
     }
 
 //step1 actions
@@ -62,9 +62,7 @@ export class CheckoutPage {
     async getTotalPrice(): Promise <string>{
         return await this.totalPrice.textContent() || '0.00';
     }
-    async cancelOrder(){
-        await this.cancelButton2.click();
-    }
+  
 
 
 
