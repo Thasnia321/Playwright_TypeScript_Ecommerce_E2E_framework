@@ -1,0 +1,5 @@
+firstname,lastname,zipcode,expected,run
+Thasni,Alathayil,23445,success,yes
+Hima,shekar,,error,yes
+Rekha,,23456,error,yes
+,pavi,234345,error,yes

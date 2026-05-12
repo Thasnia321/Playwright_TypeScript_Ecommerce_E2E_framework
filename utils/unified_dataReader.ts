@@ -7,7 +7,7 @@ export function readData(filePath: string, sheetName?: string) {
     const ext = path.extname(filePath).toLowerCase();
 
     switch (ext) {
-        case ".cvs":
+        case ".csv":
             console.log("Im reading a CSV")
             return readCSV(filePath);
 

@@ -1,5 +1,5 @@
 import { test, expect } from '../fixtures/sauceFixtures'
-import { CheckoutPage } from '../pages/checkoutPage';
+
 
 
 test.describe('Checkout Page Tests', () => {
